@@ -1,0 +1,103 @@
+/* ==========================================
+   ESTILOS GLOBALES Y RESETEO
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN (RESPONSIVE)
+   ========================================== */
+.navbar {
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Apilado vertical en móviles */
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+    .navbar-links a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        transition: color 0.2s ease;
+    }
+
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL DE LAS PÁGINAS
+   ========================================== */
+.main-content {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido en pantallas anchas */
+}
+
+.content-header {
+    margin-bottom: 2rem;
+}
+
+    .content-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .content-header p {
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+/* ==========================================
+   MEDIA QUERY: PANTALLAS GRANDES (PC / Tablets)
+   ========================================== */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Cambia a fila horizontal en PC */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .navbar-brand {
+        text-align: left;
+    }
+
+    .main-content {
+        padding: 3rem 2rem;
+    }
+
+    .content-header h1 {
+        font-size: 2.3rem;
+    }
+}

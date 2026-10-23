@@ -1,0 +1,5 @@
+.vs/
+*.slnx
+copilot-chat/
+FileContentIndex/
+node_modules/

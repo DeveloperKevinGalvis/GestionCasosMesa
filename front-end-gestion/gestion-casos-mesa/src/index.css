@@ -79,11 +79,159 @@ body {
     }
 
 /* ==========================================
-   MEDIA QUERY: PANTALLAS GRANDES (PC / Tablets)
+   COMPONENTES DE TURNOS (INICIO.JSX)
    ========================================== */
+.form-agregar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.input-nombre {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+    .input-nombre:focus {
+        border-color: #007bff;
+    }
+
+.btn-mas {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .btn-mas:hover {
+        background-color: #0056b3;
+    }
+
+.lista-contenedor {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+}
+
+.lista-vacia {
+    text-align: center;
+    color: #888;
+    padding: 1rem;
+}
+
+.lista-nombres {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.item-nombre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: #fafafa;
+    gap: 1rem;
+}
+
+/* Diseño fluido y adaptable para los cuadritos */
+.info-nombre {
+    display: flex;
+    flex-direction: column; /* En móviles el bloque de cuadritos va arriba del nombre */
+    align-items: flex-start;
+    gap: 0.4rem;
+    word-break: break-word;
+    flex: 1;
+}
+
+.cuadritos-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.conteo-numero {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #28a745;
+    background-color: #e8f5e9;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.cuadritos-container {
+    display: flex;
+    flex-wrap: wrap; /* SALTO DE LÍNEA AUTOMÁTICO A UNA SEGUNDA FILA */
+    gap: 4px;
+    max-width: 180px; /* Forzamos el límite en pantallas pequeñas */
+}
+
+.cuadrito-visual {
+    width: 12px;
+    height: 12px;
+    background-color: #28a745; /* Cuadritos tipo bloque sólido */
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.texto-nombre {
+    font-weight: 500;
+}
+
+.btn-asignar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+    .btn-asignar:hover {
+        background-color: #218838;
+    }
+
+.btn-limpiar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+    .btn-limpiar:hover {
+        background-color: #c82333;
+    }
+
+/* ==========================================
+   MEDIA QUERIES (ADAPTACIÓN DE PANTALLA)
+   ========================================== */
+
+/* Pantallas medianas y grandes (Tablets / PC) */
 @media (min-width: 768px) {
     .navbar {
-        flex-direction: row; /* Cambia a fila horizontal en PC */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 2rem;
@@ -99,5 +247,32 @@ body {
 
     .content-header h1 {
         font-size: 2.3rem;
+    }
+
+    .info-nombre {
+        flex-direction: row; /* En PC todo vuelve a una fila horizontal limpia */
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cuadritos-container {
+        max-width: 400px; /* Más espacio en pantallas grandes */
+    }
+}
+
+/* Pantallas móviles muy pequeñas */
+@media (max-width: 480px) {
+    .form-agregar {
+        flex-direction: column;
+    }
+
+    .item-nombre {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-asignar {
+        width: 100%;
+        text-align: center;
     }
 }
